@@ -1,0 +1,74 @@
+/* src/components/Menu/HamburgerMenu.css */
+
+/* Hamburger button styling */
+.hamburger-menu-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure space between lines */
+    width: 40px; /* Increased width */
+    height: 30px; /* Adjusted height to fit all three lines */
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Styling for each line of the hamburger button */
+.hamburger-menu-button .line {
+    width: 40px;  /* Increased width */
+    height: 6px;  /* Increased height for larger button */
+    background-color: #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* When the menu is open, animate the lines */
+.hamburger-menu-button.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu-button.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu-button.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Side menu styling */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;  /* Start offscreen */
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    padding-top: 60px;  /* Space for the hamburger button */
+    transition: 0.3s ease;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.side-menu.open {
+    left: 0;  /* Slide in */
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    padding: 15px;
+    text-align: left;
+}
+
+.side-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu ul li a:hover {
+    text-decoration: underline;
+}
